@@ -1,7 +1,7 @@
 import React from "react";
 import { Inside_character3 } from "./style";
 
-const Small_title_component2 = ({ title }) => {
+const Small_title2_component = ({ title }) => {
     return (
         
             <Inside_character3>
@@ -14,4 +14,4 @@ const Small_title_component2 = ({ title }) => {
 }
 
 
-export default Small_title_component2;
+export default Small_title2_component;

@@ -1,6 +1,6 @@
 // 11_MY_PAGE_COLLECTOR
 
-import Small_title_component from "../../component/small_title_component";
+import Small_title_component2 from "../../component/small_title2_component";
 import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
 import List_component from "../../component/list_component";
 import { fetch_collections } from "../../redux/middleware";
@@ -15,7 +15,7 @@ const Collection_page = () => {
   const nav = useNavigate();
 
   // 10개씩 보여주기
-  const page_unit = 7;
+  const page_unit = 6;
 
   // 페이지네이션 넘버는 5개만 보여주기
   const page_number_unit = 5;
@@ -116,7 +116,7 @@ const Collection_page = () => {
 
   return (
     <>
-      <Small_title_component title={"수거 요청 목록"} />
+      <Small_title_component2 title={"수거 요청 목록"} />
 
       <List_component
         current_list={collection_list.slice(

@@ -1,7 +1,7 @@
 // 6_MY_PAGE_CAFE_COFFEE
 
-import Small_title_component from "../../component/small_title_component";
-import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
+import Small_title2_component from "../../component/small_title2_component";
+import { Span_pageNumDirectionBtn, Span_pageNumBtn, Background_image } from "./style";
 import { cafe_emission_page } from "../../redux/middleware";
 import { total_emission_req } from "../../redux/middleware";
 import List_component from "../../component/list_component";
@@ -115,7 +115,8 @@ const Emission_page = () => {
 
   return (
     <>
-      <Small_title_component title={"나의 배출 목록"} />
+    <Background_image></Background_image>
+      <Small_title2_component title={"나의 배출 목록"} />
 
       <List_component
         current_list={emission_list?.slice(

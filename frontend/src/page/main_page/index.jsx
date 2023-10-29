@@ -2,6 +2,7 @@
 
 
 import { useSelector } from "react-redux";
+import { Background_image, High_line, Low_line } from "./style";
 
 
 const Main_page = () => {
@@ -13,10 +14,17 @@ const Main_page = () => {
 
 
     return (
+        <>
+      <Background_image></Background_image>
+      <div>
+        <High_line>커피 한 잔이</High_line>
+        </div>
         <div>
-            Main_page</div>
-    )
-}
+        <Low_line>자원이 될 때까지</Low_line>
+      </div>
+    </>
+    );
+};
 
 
 export default Main_page;

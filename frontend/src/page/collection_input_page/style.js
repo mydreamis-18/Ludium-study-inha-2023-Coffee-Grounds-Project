@@ -4,7 +4,7 @@ export const StyledContainer = styled.div`
     width: 100vw;
     max-width: 800px;
     margin: 0 auto;
-    padding: 5vh 2vw;
+    padding: 5vh 0vw;
     display: flex;
     flex-direction: column;
     gap: 3vh;
@@ -21,7 +21,7 @@ export const StyledInputContainer = styled.div`
 export const StyledLabel = styled.label`
 
 position: absolute;
-width: 46.88vw;
+width: 78.38vw;
 height: 9.38vw;
 left: 9.38vw;
 top: 57.19vw;
@@ -89,7 +89,7 @@ export const StyledButton = styled.button`
 export const Coffee_Status= styled.div`
 
 position: absolute;
-width: 46.88vw;
+width: 78.38vw;
 height: 9.38vw;
 left: 9.38vw;
 top: 82.19vw;
@@ -139,7 +139,7 @@ color: #67493F;
 export const Coffee_weight= styled.div`
 
 position: absolute;
-width: 46.88vw;
+width: 78.38vw;
 height: 9.38vw;
 left: 9.38vw;
 top: 106.25vw;
@@ -157,11 +157,11 @@ color: #67493F;
 
 `
 
-export const Coffee_weightcon= styled.div`
+export const Coffee_weightcon= styled.input`
 box-sizing: border-box;
 
 position: absolute;
-width: 46.88vw;
+width: 78.38vw;
 height: 11.25vw;
 left: 9.69vw;
 top: 115.38vw;
@@ -242,7 +242,7 @@ border: 2px solid rgba(103, 73, 63, 0.7);
 
 `
 
-export const Cha_month= styled.div`
+export const Cha_month= styled.input`
 
 box-sizing: border-box;
 

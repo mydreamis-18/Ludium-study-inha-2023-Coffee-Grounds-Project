@@ -1,6 +1,6 @@
 // 14_COLLECTION_ONCHAIN
-import Small_title_component from "../../component/small_title_component";
-import { Span_pageNumDirectionBtn, Span_pageNumBtn } from "./style";
+import Small_title2_component from "../../component/small_title2_component";
+import { Span_pageNumLeftDirectionBtn, Span_pageNumBtn,Span_pageNumRightDirectionBtn } from "./style";
 import List_component from "../../component/list_component";
 import { complete_reward } from "../../redux/middleware";
 import { MAROON_COLOR_1 } from "../../base_style";
@@ -116,7 +116,7 @@ const Collection_onchain_page = () => {
 
   return (
     <>
-      <Small_title_component title={"수거 완료 목록"} />
+      <Small_title2_component title={"보상 목록"} />
 
       <List_component
         current_list={collection_list.slice(
@@ -127,9 +127,9 @@ const Collection_onchain_page = () => {
       />
 
       <div>
-        <Span_pageNumDirectionBtn onClick={minus_current_page_number_button_fn}>
+        <Span_pageNumLeftDirectionBtn onClick={minus_current_page_number_button_fn}>
           {"<"}
-        </Span_pageNumDirectionBtn>
+        </Span_pageNumLeftDirectionBtn>
 
         {/* ㅜ total_page_count가 0이 아닐 때 */}
         {total_page_count &&
@@ -174,9 +174,9 @@ const Collection_onchain_page = () => {
             );
           })}
 
-        <Span_pageNumDirectionBtn onClick={plus_current_page_number_button_fn}>
+        <Span_pageNumRightDirectionBtn onClick={plus_current_page_number_button_fn}>
           {">"}
-        </Span_pageNumDirectionBtn>
+        </Span_pageNumRightDirectionBtn>
       </div>
     </>
   );
