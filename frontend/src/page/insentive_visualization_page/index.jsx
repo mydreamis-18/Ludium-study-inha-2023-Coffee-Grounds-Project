@@ -26,7 +26,7 @@ const Insentive_visualization_page = () => {
 
 
             <div onClick={() => nav("/insentive/token")}>
-                <span><Token_cha>지급받은 총 토큰</Token_cha></span>
+                <Token_cha>지급받은 총 토큰</Token_cha>
                 <Outcontainer_green1>
 
                     <span>{total_token_amount}token</span>

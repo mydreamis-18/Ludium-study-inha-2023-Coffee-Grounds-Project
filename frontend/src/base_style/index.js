@@ -280,7 +280,7 @@ position: absolute;
     width: 39.06vw;
     height: 14.69vw;
     left: calc(50% - 39.06vw/2 + 0.16vw);
-    top: 162vw;
+    top: 156vw;
     background: #E8D4B9;
     box-shadow: 4px 8px 4px rgba(0, 0, 0, 0.3);
     border-radius: 60px;

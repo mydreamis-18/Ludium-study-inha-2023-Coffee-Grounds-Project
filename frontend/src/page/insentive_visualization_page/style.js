@@ -3,9 +3,9 @@ import styled from "styled-components";
 export const Outcontainer_green1 = styled.div`
 
 position: absolute;
-    width: 56.25vw;
+    width: 52.25vw;
     height: 14.69vw;
-    left: calc(50% - 56.25vw/2 + 15.94vw);
+    left: calc(50% - 52.25vw/2 + 15.94vw);
     top: 38.38vw;
     background: #9F9F77;
     border-radius: 60px;
@@ -30,9 +30,9 @@ position: absolute;
 export const Outcontainer_beige1 = styled.div`
 
 position: absolute;
-width: 56.25vw;
+width: 52.25vw;
 height: 14.69vw;
-left: calc(50% - 56.25vw/2 - 12.81vw);
+left: calc(50% - 52.25vw/2 - 12.81vw);
 top: calc(50% - 14.69vw/2 - 15.78vw);
 background: #E8D4B9;
 border-radius: 60px;
@@ -56,9 +56,9 @@ color: #9F9F77;
 export const Outcontainer_green2 = styled.div`
 
 position: absolute;
-width: 56.25vw;
+width: 52.25vw;
 height: 14.69vw;
-left: calc(50% - 56.25vw/2 + 15.94vw);
+left: calc(50% - 52.25vw/2 + 15.94vw);
 top: calc(50% - 14.69vw/2 + 11.22vw);
 
 background: #9F9F77;
@@ -84,9 +84,9 @@ color: #E8D4B9;
 export const Outcontainer_beige2 = styled.div`
 
 position: absolute;
-width: 56.25vw;
+width: 52.25vw;
 height: 14.69vw;
-left: calc(50% - 56.25vw/2 - 13.13vw);
+left: calc(50% - 52.25vw/2 - 13.13vw);
 top: calc(50% - 14.69vw/2 + 40.47vw);
 
 background: #E8D4B9;
@@ -113,9 +113,9 @@ color: #9F9F77;
 export const Outcontainer_green3 = styled.div`
 
 position: absolute;
-width: 56.25vw;
+width: 52.25vw;
 height: 14.69vw;
-left: calc(50% - 56.25vw/2 + 15vw);
+left: calc(50% - 52.25vw/2 + 15vw);
 top: calc(50% - 14.69vw/2 + 68.59vw);
 
 background: #9F9F77;
@@ -259,7 +259,7 @@ export const Dec_cost2=styled.span`
 position: absolute;
 width: 28.13vw;
 height: 10.94vw;
-left: 5vw;
+left: 11vw;
 top: 157.66vw;
 
 font-family: 'Arita-dotum4.0(OTF)';

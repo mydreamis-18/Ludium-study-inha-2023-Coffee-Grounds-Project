@@ -6,7 +6,7 @@ position: absolute;
 width: 42.81vw;
 height: 9.38vw;
 left: calc(50% - 42.81vw/2 - 0.16vw);
-top: 20.5vw;
+top: 38.5vw;
 
 font-family: 'Gowun Batang';
 font-style: normal;

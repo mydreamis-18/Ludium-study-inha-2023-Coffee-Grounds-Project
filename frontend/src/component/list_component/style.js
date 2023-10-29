@@ -2,14 +2,21 @@ import styled from "styled-components";
 
 export const Div_bigContainer = styled.div`
 text-align: center;
-left: calc(50% - 75vw/2);
-top: calc(50% - 66.25vw/2 - 9.38vw);
+
 font-size: 7vw;
-padding: 5%;
+padding: 3% 5% 5% 5%;
 margin: 17% 10% 10%;
 
+box-sizing: border-box;
+
+position: absolute;
+width: 75vw;
+height: 66.25vw;
+left: calc(50% - 93vw/2);
+top: calc(50% - 66.25vw/2 - 9.38vw);
+
 border: 2px solid rgba(103, 73, 63, 0.7);
-border-radius: 60px;
+border-radius: 30px;
 `;
 
 export const Span_el = styled.span`

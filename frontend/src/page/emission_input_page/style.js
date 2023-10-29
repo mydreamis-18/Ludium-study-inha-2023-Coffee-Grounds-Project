@@ -57,5 +57,154 @@ export const InputDiv = styled.div`
   }
 `;
 
+export const Cafe_name= styled.div`
 
+position: absolute;
+width: 17.5vw;
+height: 5.63vw;
+left: 9.38vw;
+top: 52.5vw;
 
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+`
+
+export const Cafe_container= styled.div`
+
+box-sizing: border-box;
+
+position: absolute;
+width: 84.38vw;
+height: 11.25vw;
+left: 9.38vw;
+top: 59.69vw;
+
+background: #FFFFFF;
+border: 2px solid rgba(103, 73, 63, 0.7);
+border-radius: 60px;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+justify-content: center;
+
+color: #67493F;
+
+`
+
+export const Coffee_status=styled.div`
+
+position: absolute;
+width: 29.69vw;
+height: 5.94vw;
+left: 9.38vw;
+top: 80.31vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 500;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+`
+
+export const Coffee_statuscon= styled.select`
+
+box-sizing: border-box;
+
+position: absolute;
+width: 84.38vw;
+height: 11.25vw;
+left: 9.38vw;
+top: 88.44vw;
+
+background: #FFFFFF;
+border: 2px solid rgba(103, 73, 63, 0.7);
+border-radius: 60px;
+
+`
+
+export const Coffee_weight=styled.div`
+
+position: absolute;
+width: 29.69vw;
+height: 5.94vw;
+left: 9.38vw;
+top: 109.06vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+`
+
+export const Coffee_weightcon=styled.input`
+
+box-sizing: border-box;
+
+position: absolute;
+width: 46.88vw;
+height: 11.31vw;
+left: 9.69vw;
+top: 116.19vw;
+
+background: #FFFFFF;
+border: 2px solid rgba(103, 73, 63, 0.7);
+border-radius: 60px;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+`
+
+export const KG=styled.div`
+
+position: absolute;
+width: 17.19vw;
+height: 7.5vw;
+left: 55vw;
+top: 119.06vw;
+
+font-family: 'Arita-dotum4.0(OTF)';
+font-style: normal;
+font-weight: 400;
+font-size: 5vw;
+line-height: 5vw;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.11em;
+
+color: #67493F;
+
+`
