@@ -1,9 +1,4 @@
 // SPDX-License-Identifier: MIT
-// File: Incheon_Coffeebak_Token_flattened_v2.0.sol
-
-// v2.0
-// 탈중앙화 관점에서 배포 시 민팅되는 토큰을 CA가 갖도록 하고, 오너가 발행량만큼 접근할 수 있게 한다.
-
 // File: @openzeppelin/contracts/utils/Nonces.sol
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Nonces.sol)
@@ -2887,7 +2882,7 @@ contract Coffeebak_Emission is Ownable {
     }
 
     // 커피박 배출 후 검증이 완료되면 배출 양에 따라
-    // 커피박 에미션 CA에서 카페 지갑으로 ICT 토큰을 전송해준다.
+    // ICT CA에서 카페 지갑으로 ICT 토큰을 전송해준다.
     function transfer_token(
         address _to,
         uint256 _token_amount,

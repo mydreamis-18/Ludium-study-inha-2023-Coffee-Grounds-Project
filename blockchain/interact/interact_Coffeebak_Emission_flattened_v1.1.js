@@ -91,7 +91,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
     const cafe_wallet = "0x7d547B43a6514ff4470746312AA87e7cDedB3dF2";
     // const tx = await contract.add_cafe_emission_data(cafe_wallet, "지원이네", "지원", "2023-10-30", 100, deadline, v, r, s, { gasLimit: 100000 })
-    const tx = await contract.transfer_token(cafe_wallet, 100, deadline, v, r, s, { gasLimit: 100000 })
+    const tx = await contract.transfer_token(cafe_wallet, 30, deadline, v, r, s, { gasLimit: 100000 })
 
     
     const receipt = await tx.wait();

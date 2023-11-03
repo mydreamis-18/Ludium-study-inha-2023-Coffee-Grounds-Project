@@ -1,9 +1,4 @@
 // SPDX-License-Identifier: MIT
-// File: Incheon_Coffeebak_Token_flattened_v2.0.sol
-
-// v2.0
-// 탈중앙화 관점에서 배포 시 민팅되는 토큰을 CA가 갖도록 하고, 오너가 발행량만큼 접근할 수 있게 한다.
-
 // File: @openzeppelin/contracts/utils/Nonces.sol
 
 // OpenZeppelin Contracts (last updated v5.0.0) (utils/Nonces.sol)
