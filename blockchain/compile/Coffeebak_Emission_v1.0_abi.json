@@ -2,8 +2,8 @@
 	{
 		"inputs": [
 			{
-				"internalType": "contract Incheon_Coffeebak_Token",
-				"name": "_ICT_CA",
+				"internalType": "address",
+				"name": "ICT_CA_",
 				"type": "address"
 			},
 			{
@@ -59,19 +59,9 @@
 	{
 		"inputs": [
 			{
-				"internalType": "string",
-				"name": "_collector_name",
-				"type": "string"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_verification_date",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "_coffeebak_amount",
-				"type": "uint256"
+				"internalType": "address",
+				"name": "_cafe_wallet",
+				"type": "address"
 			},
 			{
 				"internalType": "string",
@@ -79,14 +69,39 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "_collector_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_verification_date",
+				"type": "string"
+			},
+			{
 				"internalType": "uint256",
-				"name": "_token_amount",
+				"name": "_coffeebak_amount",
 				"type": "uint256"
 			},
 			{
-				"internalType": "address",
-				"name": "_cafe_wallet",
-				"type": "address"
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint8",
+				"name": "v",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "r",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "s",
+				"type": "bytes32"
 			}
 		],
 		"name": "add_cafe_emission_data",
@@ -105,14 +120,9 @@
 			{
 				"components": [
 					{
-						"internalType": "uint256",
-						"name": "verification_date",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "coffeebak_amount",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "cafe_name",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -120,14 +130,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "token_amount",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "verification_date",
+						"type": "string"
 					},
 					{
-						"internalType": "string",
-						"name": "cafe_name",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "coffeebak_amount",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct Coffeebak_Emission.emission_data[]",
@@ -138,6 +148,26 @@
 				"internalType": "address[]",
 				"name": "_cafe_wallet",
 				"type": "address[]"
+			},
+			{
+				"internalType": "uint256[]",
+				"name": "deadline",
+				"type": "uint256[]"
+			},
+			{
+				"internalType": "uint8[]",
+				"name": "v",
+				"type": "uint8[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "r",
+				"type": "bytes32[]"
+			},
+			{
+				"internalType": "bytes32[]",
+				"name": "s",
+				"type": "bytes32[]"
 			}
 		],
 		"name": "add_cafe_emission_data_list",
@@ -155,7 +185,7 @@
 		"inputs": [
 			{
 				"internalType": "address",
-				"name": "cafe_wallet",
+				"name": "",
 				"type": "address"
 			},
 			{
@@ -167,14 +197,9 @@
 		"name": "cafe_emission_data",
 		"outputs": [
 			{
-				"internalType": "uint256",
-				"name": "verification_date",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "coffeebak_amount",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "cafe_name",
+				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -182,14 +207,14 @@
 				"type": "string"
 			},
 			{
-				"internalType": "uint256",
-				"name": "token_amount",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "verification_date",
+				"type": "string"
 			},
 			{
-				"internalType": "string",
-				"name": "cafe_name",
-				"type": "string"
+				"internalType": "uint256",
+				"name": "coffeebak_amount",
+				"type": "uint256"
 			}
 		],
 		"stateMutability": "view",
@@ -221,14 +246,9 @@
 			{
 				"components": [
 					{
-						"internalType": "uint256",
-						"name": "verification_date",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "coffeebak_amount",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "cafe_name",
+						"type": "string"
 					},
 					{
 						"internalType": "string",
@@ -236,14 +256,14 @@
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
-						"name": "token_amount",
-						"type": "uint256"
+						"internalType": "string",
+						"name": "verification_date",
+						"type": "string"
 					},
 					{
-						"internalType": "string",
-						"name": "cafe_name",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "coffeebak_amount",
+						"type": "uint256"
 					}
 				],
 				"internalType": "struct Coffeebak_Emission.emission_data[]",
@@ -306,6 +326,39 @@
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_token_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "deadline",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint8",
+				"name": "v",
+				"type": "uint8"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "r",
+				"type": "bytes32"
+			},
+			{
+				"internalType": "bytes32",
+				"name": "s",
+				"type": "bytes32"
+			}
+		],
+		"name": "permit_token",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [],
 		"name": "renounceOwnership",
 		"outputs": [],
@@ -360,6 +413,24 @@
 			}
 		],
 		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_token_amount",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
+			}
+		],
+		"name": "transfer_test",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
