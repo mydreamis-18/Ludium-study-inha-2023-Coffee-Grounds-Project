@@ -7,7 +7,7 @@ contract Coffeebak_Emission is Ownable {
     //
     uint256 public total_emission_count;
     uint256 public total_emission_amount;
-    Incheon_Coffeebak_Token private _token;
+    Incheon_Coffeebak_Token public _token;
 
     // 커피박 1 kg당 인센티브로 지급해주는 ICT 토큰 단위
     // 현재로서는 1 kg당 30 ICT 지급 예정
@@ -137,42 +137,39 @@ contract Coffeebak_Emission is Ownable {
     //     return true;
     // }
 
-    // // 커피박 배출 후 검증이 완료되면 배출 양에 따라
-    // // ICT CA에서 카페 지갑으로 ICT 토큰을 전송해준다.
-    // function transfer_token(
-    //     address _to,
-    //     uint256 _token_amount,
-    //     uint256 deadline,
-    //     uint8 v,
-    //     bytes32 r,
-    //     bytes32 s
-    // ) internal onlyOwner {
-    //     //
-    //     // permit_token(_token_amount, deadline, v, r, s);
+    // 커피박 배출 후 검증이 완료되면 배출 양에 따라
+    // ICT CA에서 카페 지갑으로 ICT 토큰을 전송해준다.
+    function transfer_token(
+        address _to,
+        uint256 _token_amount,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) internal onlyOwner {
+        //
+        permit_token(_token_amount, deadline, v, r, s);
+        _token.transferFrom(address(_token), _to, _token_amount);
+    }
 
-    //     // IERC20 ict_token = IERC20(_ICT_CA);
-    //     // ict_token.transferFrom(_ICT_CA, _to, _token_amount);
-    // }
-
-    // function permit_token(
-    //     uint256 _token_amount,
-    //     uint256 deadline,
-    //     uint8 v,
-    //     bytes32 r,
-    //     bytes32 s
-    // ) public onlyOwner {
-    //     //
-    //     // IERC20Permit ict_token = IERC20Permit(_ICT_CA);
-    //     // ict_token.permit(
-    //     //     _ICT_CA,
-    //     //     address(this),
-    //     //     _token_amount,
-    //     //     deadline,
-    //     //     v,
-    //     //     r,
-    //     //     s
-    //     // );
-    // }
+    function permit_token(
+        uint256 _token_amount,
+        uint256 deadline,
+        uint8 v,
+        bytes32 r,
+        bytes32 s
+    ) public onlyOwner {
+        //
+        _token.permit(
+            address(_token),
+            address(this),
+            _token_amount,
+            deadline,
+            v,
+            r,
+            s
+        );
+    }
 
     function transfer_test(
         uint256 _token_amount,
