@@ -2,8 +2,8 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "ICT_CA_",
+				"internalType": "contract Incheon_Coffeebak_Token",
+				"name": "_ICT_CA",
 				"type": "address"
 			},
 			{
@@ -59,28 +59,8 @@
 	{
 		"inputs": [
 			{
-				"internalType": "address",
-				"name": "_cafe_wallet",
-				"type": "address"
-			},
-			{
-				"internalType": "string",
-				"name": "_cafe_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_collector_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_verification_date",
-				"type": "string"
-			},
-			{
 				"internalType": "uint256",
-				"name": "_coffeebak_amount",
+				"name": "_token_amount",
 				"type": "uint256"
 			},
 			{
@@ -104,81 +84,60 @@
 				"type": "bytes32"
 			}
 		],
-		"name": "add_cafe_emission_data",
-		"outputs": [
-			{
-				"internalType": "bool",
-				"name": "",
-				"type": "bool"
-			}
-		],
+		"name": "permit_token",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
 		"inputs": [
 			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "cafe_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "collector_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "verification_date",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "coffeebak_amount",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct Coffeebak_Emission.emission_data[]",
-				"name": "_emission_data_list",
-				"type": "tuple[]"
+				"internalType": "uint256",
+				"name": "_token_amount",
+				"type": "uint256"
 			},
 			{
-				"internalType": "address[]",
-				"name": "_cafe_wallet",
-				"type": "address[]"
-			},
-			{
-				"internalType": "uint256[]",
-				"name": "deadline",
-				"type": "uint256[]"
-			},
-			{
-				"internalType": "uint8[]",
-				"name": "v",
-				"type": "uint8[]"
-			},
-			{
-				"internalType": "bytes32[]",
-				"name": "r",
-				"type": "bytes32[]"
-			},
-			{
-				"internalType": "bytes32[]",
-				"name": "s",
-				"type": "bytes32[]"
+				"internalType": "address",
+				"name": "_to",
+				"type": "address"
 			}
 		],
-		"name": "add_cafe_emission_data_list",
+		"name": "transfer_test",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "_token",
 		"outputs": [
 			{
-				"internalType": "bool",
+				"internalType": "contract Incheon_Coffeebak_Token",
 				"name": "",
-				"type": "bool"
+				"type": "address"
 			}
 		],
-		"stateMutability": "nonpayable",
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -234,85 +193,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_cafe_wallet",
-				"type": "address"
-			}
-		],
-		"name": "get_cafe_emission_data",
-		"outputs": [
-			{
-				"components": [
-					{
-						"internalType": "string",
-						"name": "cafe_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "collector_name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "verification_date",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "coffeebak_amount",
-						"type": "uint256"
-					}
-				],
-				"internalType": "struct Coffeebak_Emission.emission_data[]",
-				"name": "",
-				"type": "tuple[]"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_cafe_wallet",
-				"type": "address"
-			}
-		],
-		"name": "get_cafe_total_emission_amount",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "_cafe_wallet",
-				"type": "address"
-			}
-		],
-		"name": "get_cafe_total_emission_count",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"name": "owner",
 		"outputs": [
@@ -323,59 +203,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_token_amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint256",
-				"name": "deadline",
-				"type": "uint256"
-			},
-			{
-				"internalType": "uint8",
-				"name": "v",
-				"type": "uint8"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "r",
-				"type": "bytes32"
-			},
-			{
-				"internalType": "bytes32",
-				"name": "s",
-				"type": "bytes32"
-			}
-		],
-		"name": "permit_token",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "renounceOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_new_coffeebak_insentive_unit",
-				"type": "uint256"
-			}
-		],
-		"name": "set_coffeebak_insentive_unit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
@@ -402,37 +229,6 @@
 			}
 		],
 		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "newOwner",
-				"type": "address"
-			}
-		],
-		"name": "transferOwnership",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "uint256",
-				"name": "_token_amount",
-				"type": "uint256"
-			},
-			{
-				"internalType": "address",
-				"name": "_to",
-				"type": "address"
-			}
-		],
-		"name": "transfer_test",
-		"outputs": [],
-		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

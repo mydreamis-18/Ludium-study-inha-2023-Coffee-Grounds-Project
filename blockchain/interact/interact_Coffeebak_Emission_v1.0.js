@@ -62,7 +62,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
     const ict_read_only_contract = await get_read_only_contract_fn(ict_file_name);
 
 
-    const ict_ca = "0x279609ED694c06452992b826C7F4750efE3a4280";
+    const ict_ca = get_ca_fn("Incheon_Coffeebak_Token_flattened_v2.0");
     const owner = ict_ca;
     const spender = "0x7d547B43a6514ff4470746312AA87e7cDedB3dF2";
     const value = 30;
