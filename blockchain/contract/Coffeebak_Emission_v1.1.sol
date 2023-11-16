@@ -1,3 +1,10 @@
+// v1.0에서 달라진 점은
+// ICT 컨트랙 불러올 때 CA를 Incheon_Coffeebak_Token가 아닌 인터페이스 형태로 감싼 것
+
+// ICT 컨트랙과 상호작용 잘 되는지 확인한 방법 
+// ICT 컨트랙에서 오너 계정으로 transferfrom() 트잭을 날려서 이 컨트랙으로 토큰을 보내고
+// transfer_test() 함수를 실행시키면 v1.0과 v1.1 모두 문제 없이 잘 되는 것을 확인할 수 있다.
+
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
@@ -5,9 +12,9 @@ import "./Incheon_Coffeebak_Token_flattened_v2.0.sol";
 
 contract Coffeebak_Emission is Ownable {
     //
+    address private _token_ca;
     uint256 public total_emission_count;
     uint256 public total_emission_amount;
-    Incheon_Coffeebak_Token private _token;
 
     // 커피박 1 kg당 인센티브로 지급해주는 ICT 토큰 단위
     // 현재로서는 1 kg당 30 ICT 지급 예정
@@ -28,11 +35,11 @@ contract Coffeebak_Emission is Ownable {
     // 여기서 msg.sender는 배포자
     // 오로지 배포자만이 오너가 될 수 있다.
     constructor(
-        Incheon_Coffeebak_Token _ICT_CA,
+        address _ICT_CA,
         uint256 _coffeebak_insentive_unit
     ) Ownable(_msgSender()) {
         //
-        _token = _ICT_CA;
+        _token_ca = _ICT_CA;
         coffeebak_insentive_unit = _coffeebak_insentive_unit;
     }
 
@@ -48,7 +55,9 @@ contract Coffeebak_Emission is Ownable {
     ) internal onlyOwner {
         //
         permit_token(_token_amount, deadline, v, r, s);
-        _token.transferFrom(address(_token), _to, _token_amount);
+
+        IERC20 token = IERC20(_token_ca);
+        token.transferFrom(_token_ca, _to, _token_amount);
     }
 
     function permit_token(
@@ -59,8 +68,10 @@ contract Coffeebak_Emission is Ownable {
         bytes32 s
     ) public onlyOwner {
         //
-        _token.permit(
-            address(_token),
+        IERC20Permit token = IERC20Permit(_token_ca);
+
+        token.permit(
+            _token_ca,
             address(this),
             _token_amount,
             deadline,
@@ -75,6 +86,7 @@ contract Coffeebak_Emission is Ownable {
         address _to
     ) public {
         //
-        _token.transfer(_to, _token_amount);
+        IERC20 token = IERC20(_token_ca);
+        token.transfer(_to, _token_amount);
     }
 }
