@@ -36,40 +36,6 @@ contract Coffeebak_Emission is Ownable {
         coffeebak_insentive_unit = _coffeebak_insentive_unit;
     }
 
-    // 커피박 배출 후 검증이 완료되면 배출 양에 따라
-    // ICT CA에서 카페 지갑으로 ICT 토큰을 전송해준다.
-    function transfer_token(
-        address _to,
-        uint256 _token_amount,
-        uint256 deadline,
-        uint8 v,
-        bytes32 r,
-        bytes32 s
-    ) internal onlyOwner {
-        //
-        permit_token(_token_amount, deadline, v, r, s);
-        _token.transferFrom(address(_token), _to, _token_amount);
-    }
-
-    function permit_token(
-        uint256 _token_amount,
-        uint256 deadline,
-        uint8 v,
-        bytes32 r,
-        bytes32 s
-    ) public onlyOwner {
-        //
-        _token.permit(
-            address(_token),
-            address(this),
-            _token_amount,
-            deadline,
-            v,
-            r,
-            s
-        );
-    }
-
     function transfer_test(
         uint256 _token_amount,
         address _to

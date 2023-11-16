@@ -1,24 +1,3 @@
-// Problem
-// 폴리곤 테스트 네트워크인 뭄바이를 사용해야 하는데 그러려면 solc 컴파일러 버전은 v0.8.19 이하여야 함
-// 오픈 재플린 위자드 통해서 만든 컨트랙트는 다 v0.8.20 버전임
-// 리믹스에서 v0.8.19 버전 선택 시 에러 발생함
-// 모든 컨트랙트의 컴파일 버전을 v0.8.20에서 v0.8.19로 바꿔도 순식간에 다시 돌아가여 에러를 해결할 수 없음
-// 혹시 몰라서 오픈 제플린 다운그레이드 해보았지만 동일함
-// solc 컴파일러 사용 시 아래와 같은 에러 발생함
-// C:\Ludium-study-inha-2023-Coffee-Grounds-Project\blockchain\compile\index.js:50
-// const bytecode = compiledCode.contracts[fileName][contractName].evm.bytecode.object;
-// TypeError: Cannot read properties of undefined (reading 'Incheon_Coffeebak_Token')
-
-
-// Solution
-// 리믹스에서 일단 최신 버전 컴파일러로 컴파일 후
-// flatten 진행하고
-// 컨트랙트 속 모든 버전 변경 후
-// 리믹스에서 내 메타마스크 지갑으로 연결해서 배포하거나
-// abi, bytecode 값을 vscode에 하드 코딩으로 복붙한 다음 ethers로 배포하고
-// ca 값을 복붙한 다음 인터랙트 하면 성공됨
-
-
 const { ethers } = require("ethers");
 const { get_ca_fn } = require("../deploy");
 const { get_read_only_contract_fn, get_contract_fn } = require("./index");
@@ -28,7 +7,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 (async () => {
     //
     
-    const fileName = "Coffeebak_Emission_v1.0";
+    const fileName = "Coffeebak_Emission_v2.0";
 
 
     const api_key = process.env.JIWON_API_KEY;
@@ -59,17 +38,17 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
 
     const ict_file_name = "Incheon_Coffeebak_Token_flattened_v2.0";
+    const ict_contract = await get_contract_fn(ict_file_name);
     const ict_read_only_contract = await get_read_only_contract_fn(ict_file_name);
 
 
-    const ict_ca = get_ca_fn("Incheon_Coffeebak_Token_flattened_v2.0");
-    const owner = ict_ca;
+    const owner = get_ca_fn("Incheon_Coffeebak_Token_flattened_v2.0");
     const spender = "0x7d547B43a6514ff4470746312AA87e7cDedB3dF2";
-    const value = 30;
-    const nonce = await ict_read_only_contract.nonces(owner);
+    const value = 1000;
+    const nonce = await ict_contract.nonces(owner);
     const deadline = Math.floor(new Date().getTime() / 1000) + 60 * 60 * 24;
-
-
+    
+    
     const values = {
         owner,
         spender,
@@ -81,9 +60,10 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
     const signature = await wallet._signTypedData(domain, { Permit: types }, values);
     const { v, r, s } = ethers.utils.splitSignature(signature);
-
-
+    
+    
     console.log(deadline);
+    console.log(nonce);
     console.log(v);
     console.log(r);
     console.log(s);
@@ -91,7 +71,7 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
     // const cafe_wallet = "0x7d547B43a6514ff4470746312AA87e7cDedB3dF2";
     // const tx = await contract.add_cafe_emission_data(cafe_wallet, "지원이네", "지원", "2023-10-30", 100, deadline, v, r, s, { gasLimit: 100000 })
-    const tx = await contract.permit_token(30, deadline, v, r, s, { gasLimit: 100000 })
+    const tx = await contract.permit_token(1000, deadline, v, r, s, { gasLimit: 100000 })
 
 
     // 가스비 에러 발생
