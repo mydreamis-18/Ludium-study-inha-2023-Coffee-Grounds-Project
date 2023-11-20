@@ -27,23 +27,34 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
 
 (async () => {
     //
-    
+
     const fileName = "Incheon_Coffeebak_Token_flattened_v2.0";
 
 
-    // const read_only_contract = await get_read_only_contract_fn(fileName);
+    const read_only_contract = await get_read_only_contract_fn(fileName);
     // const contract_owner = await read_only_contract.owner();
     // console.log(contract_owner);
 
 
-    const api_key = process.env.JIWON_API_KEY;
-    const private_key = process.env.JIWON_PRIVATE_KEY;
-    const provider = get_infura_provider_fn(api_key);
-    const wallet = new ethers.Wallet(private_key, provider);
-
-
     const ca = get_ca_fn(fileName);
+    const api_key = process.env.JIWON_API_KEY;
+    const provider = get_infura_provider_fn(api_key);
     const contract = await get_contract_fn(fileName);
+    const private_key = process.env.JIWON_PRIVATE_KEY;
+    const private_key_2 = process.env.JIWON_PRIVATE_KEY_2;
+    const spender_wallet = new ethers.Wallet(private_key, provider);
+    const owner_wallet = new ethers.Wallet(private_key_2, provider);
+
+
+    // 배포된 컨트랙트의 네트워크 확인
+    const contractAddress = await provider.getCode(ca);
+    // 현재 배포된 계약이 없는 경우
+    if (contractAddress === '0x') {
+        console.log('Contract not found');
+    } else {
+        console.log('Contract found');
+    }
+    console.log(contractAddress);
 
 
     const domain = {
@@ -63,8 +74,8 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
     ]
 
 
-    const owner = wallet.address;
-    const spender = ca;
+    const owner = owner_wallet.address;
+    const spender = spender_wallet.address;
     const value = 1;
     const nonce = await contract.nonces(owner);
     const deadline = Math.floor(new Date().getTime() / 1000) + 60 * 60 * 24;
@@ -79,8 +90,17 @@ const { get_infura_provider_fn } = require("../create_wallet_ethers_v5.7.2");
     }
 
 
-    const signature = await wallet._signTypedData(domain, { Permit: types }, values);
+    const signature = await spender_wallet._signTypedData(domain, { Permit: types }, values);
     const { v, r, s } = ethers.utils.splitSignature(signature);
+
+
+    console.log(deadline);
+    console.log(nonce);
+    console.log(v);
+    console.log(r);
+    console.log(s);
+
+
     const tx = await contract.permit(owner, spender, value, deadline, v, r, s, { gasLimit: 1000000 });
 
 
